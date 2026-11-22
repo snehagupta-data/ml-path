@@ -1,7 +1,9 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { StoreProvider } from './store/store';
 import Layout from './components/Layout';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { lazyWithRetry as lazy } from './lib/lazyWithRetry';
 
 // Lazy-load pages for code splitting.
 const Dashboard = lazy(() => import('./pages/Dashboard'));
@@ -41,8 +43,8 @@ export default function App() {
   return (
     <StoreProvider>
       <BrowserRouter>
-        <Suspense fallback={<Loading />}>
-          <Routes>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>          <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Dashboard />} />
               <Route path="/roadmap" element={<Roadmap />} />
@@ -72,6 +74,7 @@ export default function App() {
             </Route>
           </Routes>
         </Suspense>
+        </ErrorBoundary>
       </BrowserRouter>
     </StoreProvider>
   );
