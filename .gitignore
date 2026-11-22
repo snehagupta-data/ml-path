@@ -33,3 +33,4 @@ backend/__pycache__/
 backend/*.db
 backend/venv/
 *.pyc
+.vercel

@@ -14,7 +14,7 @@
 cd backend
 python3 -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r requirements-local.txt
 uvicorn main:app --reload       # http://127.0.0.1:8000
 ```
 

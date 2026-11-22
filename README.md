@@ -103,7 +103,7 @@ Backend (optional, local-dev only — the frontend does not need it):
 
 ```bash
 cd backend
-pip install -r requirements.txt
+pip install -r backend/requirements-local.txt
 uvicorn main:app --reload   # http://localhost:8000, /api/health
 ```
 

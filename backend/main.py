@@ -13,7 +13,7 @@ IMPORTANT — READ BEFORE USING:
     the local SQLite file as a source of truth — it is throwaway dev data.
 
 Run locally:
-    pip install -r requirements.txt
+    pip install -r requirements-local.txt
     uvicorn main:app --reload          # http://127.0.0.1:8000
 
 Config:

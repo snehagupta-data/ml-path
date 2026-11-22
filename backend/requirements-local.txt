@@ -1,0 +1,5 @@
+# ml-path local-dev backend dependencies (pinned; verified installable 2026-11-22)
+# Storage is the Python stdlib sqlite3 module — no ORM dependency.
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.4
